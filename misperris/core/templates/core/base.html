@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    {% block js %}
+
+    {% endblock %}
+    {% block css %}
+    
+    {% endblock %}
+    <title>
+        {% block titulo %}
+
+        {% endblock %}
+
+    </title>
+</head>
+
+<header>
+  <div class="contenedor" >
+  <img src="{% static 'core/img/logo.png' %}"/>
+  
+      <input type="checkbox" id="menu-bar">
+      <label class="fontawesome-align-justify" for="menu-bar"></label>
+      <nav class="menu">
+          <a href="{% url 'home' %}"><i class="fas fa-home"></i> 
+          <span class="icon"> </span>Inicio</a>
+          <a href="{% url 'login' %}"><i class="fas fa-home"></i> 
+          <span class="icon"> </span>Login</a> 
+          <a href="{% url 'reg' %}"><i class="fas fa-home"></i> 
+          <span class="icon"> </span>Registrar</a>
+          <a href="{% url 'adop' %}"><i class="fas fa-home"></i> 
+          <span class="icon"> </span>Solicitar Adopción</a>       
+      </nav>
+  </div>
+</header>
+ <div id="banner">
+        <center>
+            <img src="{% static 'core/img/dog.png' %}">
+        </center>    
+    </div>
+    
+    
+    <div id="contenedor3">
+        <div id="columna1">
+           <b class="telefono">  + 56 9 98765431</b>  
+        </div>
+        <div id="columna2">
+        <center>
+        <b class="rescate">  Rescate y adopción de perros callejeros</b>
+        </center>
+        </div>
+        <div id="columna3">
+        <img class="img" src="{% static 'core/img/facebook-boton-circular-social.png' %}" >&nbsp;&nbsp;&nbsp;&nbsp;
+        <img class="img" src="{% static 'core/img/google-plus-boton-circular-social.png' %}" >&nbsp;&nbsp;&nbsp;&nbsp;
+        <img class="img" src="{% static 'core/img/instagram.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;
+        <img class="img" src="{% static 'core/img/email-nuevo-con-boton-circular.png' %}" >    
+        </div>
+        
+    </div>
+        
+
+    {% block contenedor %}
+
+    {% endblock %}
+</body>
+</html>

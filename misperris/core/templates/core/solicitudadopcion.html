@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenedor %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+
+        <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+        {% block js %}
+
+        {% endblock %}
+        {% block css %}
+
+        {% endblock %}
+        <title>
+            {% block titulo %}
+
+            {% endblock %}
+
+        </title>
+    </head>
+
+    <br>
+    <br>
+    
+    <div id="contenedor5">
+        
+        <div  id="caja2">
+            <form method="POST">
+            {% csrf_token %}
+            <br>
+            <br>
+            <h2>SOLICITUD DE ADOPCIÓN</h2>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                <select name="raza">
+                    <option>Seleccione</option>
+                    {% for ra in raza %}
+                    <option>{{ra.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <select name="estado">
+                    <option>Seleccione</option>
+                    {% for est in est %}
+                    <option>{{est.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <input type="text" name="desc" id="desc" placeholder="Dé una descripción">
+                <input type="submit" value="Enviar" id="botoon"/>
+                <input type="reset" value="Limpiar" />
+            </form> 
+        </div>
+    </div>
+
+    <div id="caja3">
+        <img src="{% static 'core/img/dogs.png'%}" >
+    </div>
+    {% if respuesta %}
+       <h1>Grabo</h1>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,514 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|typicons);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*background-image: url('https://victorgrblog.files.wordpress.com/2016/04/fondo-huellas2.jpg');*/
+    background-image: url(../img/patitas.jpg);
+    height: 1200px;
+}
+
+
+
+header {
+    width: 100%;
+    height: 66px;
+    background-color: rgb(117, 236, 197);;
+    color: #fff;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .contenedor {
+    display: table;
+}
+
+
+.contenedor {
+    width: 95%;
+    margin: auto;
+}
+
+h1{
+    float: left;
+}
+
+/*menu*/
+
+
+.menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(117, 236, 197);;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+
+@media (min-width:1024px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+    
+    .menu a {
+        border: none;
+    }
+    
+    header label { 
+        display: none;
+    }
+    
+}
+
+/*-----------------------------------------------*/
+
+
+/*Banner Perrito*/
+
+#banner{
+    margin-top: 30px;
+    background-color: rgb(82, 218, 172);
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width:1028px) { 
+    
+    #banner {
+    margin-top: 30px;
+    background-color: rgb(82, 218, 172);
+    width: 100%; 
+    height: auto;
+    }
+    
+    .contenedor img{
+        width:100%;
+        height: auto;
+        
+    }
+}
+/*-----------------------------------------------*/
+   #banner img {
+        width: 100%;
+        margin-top: 60px;
+        max-width: 700px;
+        max-height: 300px;
+        background-color: rgb(82, 218, 172);   
+    }
+    .contenedor img{
+        width:100%;
+        max-width: 329px;
+        max-height: 60px;
+    }
+    
+
+section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+/*-----------------------------------------------*/
+/*INFORMACIÓN
+/*-----------------------------------------------*/
+
+#info{
+    background-color: rgb(117, 236, 197);
+    height: 80px;
+    
+}
+
+/*-----------------------------------------------*/
+/*FORMULARIO
+/*-----------------------------------------------*/
+
+
+form{
+    width: 450px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+h2{
+    color:#fff;
+    text-align: center;
+    margin:0;
+    font-size: 30px;
+    margin-bottom: 20px;   
+}
+
+
+input, textarea ,select{
+    width: 100%;
+    margin-bottom: 20px;
+    padding:7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border:none;
+    
+}
+
+textarea{
+    min-height: 100px;
+    max-height:200px;
+    max-width: 100%
+}
+
+#botoon{
+    background:rgb(117, 236, 197); 
+    color:white;
+    padding:20px;
+}
+
+#main-container{
+    margin:150px auto;
+    width: 600px;
+
+}
+
+table{
+    background-color: white;
+    text-align: left;
+    width: 50%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+th,td{
+    padding:10px;
+}
+
+thead{
+    
+    background-color:  #369681;
+    border-bottom: solid 5px #0F362D;
+    color:white;
+    
+}
+
+tr:nth-child(even){
+    background-color: #ddd; 
+}
+tr:hover{
+    background-color: #369681;
+    color:white;
+    
+}
+
+/*PERRITO FORMULARIO*/
+
+.perrito{
+    max-width: 400px;
+    max-height: 700px;
+    width:100%;
+    height: auto;
+}
+
+.galeria {
+    margin: 0 px;
+    padding-top: 50px;
+    max-width: 100%;
+    max-height: 100px;
+    margin-top: -55px;
+}
+
+.galeria img{
+     filter: gray; 
+  -webkit-filter: grayscale(1); 
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    margin-bottom: 20px;
+    margin: 20px;
+    width: 250px;
+    height: 250px;
+    border: 3px rgb(117, 236, 197) ridge;
+}
+.galeria img:hover{
+    filter: grayscale(0%);
+    transition: scale(1.1);
+}
+
+
+.img_gal{
+    width: 1500px;
+    height: 300px;
+}
+
+.cab_gal{
+    background-color: black; 
+}
+.ban{
+    
+    height: 200px;
+}
+
+.ban img{
+    width: 100%;
+    min-height: 300px;
+    max-height: 500px;
+}
+
+
+#contenedor3{
+    
+    background-color: rgb(82, 218, 172);
+    width: 100%; 
+    height: 100px
+    
+    
+    
+    
+}
+
+#columna1{
+    width: 33.333%;
+    text-align:center;
+    padding: 8px;
+    float:left;
+    height: 100px;
+    background-color: rgb(82, 218, 172);
+}
+
+#columna2{
+    width: 33.333%;
+    text-align: left;
+    padding: 8px;
+    float:left;
+    background-color: rgb(82, 218, 172);
+    height: 100px;
+}
+#columna3{
+    width: 33.333%;
+    text-align: center;
+    padding: 8px;
+    float:left;
+        background-color: rgb(82, 218, 172);
+        height: 100px;
+}
+
+.telefono{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding:50px;
+    color: white;
+    
+   
+}
+
+
+.rescate{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+   
+    
+}
+
+.img
+{
+    height:40px ;
+    width: 40px;  
+}
+
+
+
+#contenedor4{
+    width: 100%;
+    height: 600px;
+    clear:both;
+}
+
+#izq{
+    width: 46%;
+    text-align:right;
+    padding: 8px;
+    float:left;
+    height: 800px;
+    
+
+}
+
+
+.text1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    float: right;
+    
+  
+    
+}
+.text2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    float: right;
+    color: gray;
+}
+
+#derecha{ 
+    width: 46%;
+    text-align:left;
+    padding: 8px;
+    float:left;
+    height: 800px;
+   
+}
+
+
+.text5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    float: left;
+    color: gray;
+}
+.text6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 10;
+    float: left;
+    text-align: left;
+    float: left;
+}
+
+.imagencomida{
+    float: left;
+    height:250px ;
+    max-width: 300px;
+    width: 100%;
+    padding :8px;  
+
+}
+
+#contenedor5{
+    width: 100%;
+    height: 500px;
+}
+
+#caja1{
+    width: 50%;
+    text-align:right;
+    padding: 8px;
+    float:left;
+    height: 800px;
+}
+#caja2{
+    width: 50%;
+    text-align:left;
+    padding: 8px;
+    float:right;
+    height: 500px;
+}
+.caja3{
+    width: 50%;
+    text-align:center;
+    padding: 8px;
+    height: 600px;
+}
+
+#caja3 img{
+    
+    width: 100%;
+    max-width: 950px;
+    max-height: 900px;
+}
+
+.imagenperro{
+    width: 100%;
+    max-width: 400px;
+    max-height: 250px;
+  
+}
+
+#caja1 img{
+    
+    width: 100%;
+    max-width: 150px;
+    max-height: 400px;
+}
+
+
+#tittle{
+    font-family: Arial, Helvetica, sans-serif;
+    color:gray;
+    width: 90%;
+    margin-top: 10px;
+    text-align:center;
+}
+
+.carousel-control-next{
+    height: 300px;
+    width: 40px
+    
+}
+.carousel-control-prev{
+     height: 300px;
+    width: 40px
+}
+.carousel-inner img{
+    
+    height: 400px;
+    width: 1000px;
+}
+
+.carou im{
+       background-color: rgb(117, 236, 197); 
+       width: 100%;
+}
+   
+.carousel-caption{
+       font-family: cursive, Helvetica, sans-serif;
+       font-size: 15px;
+       
+   }
+   
