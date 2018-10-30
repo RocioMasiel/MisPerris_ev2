@@ -43,11 +43,11 @@ class Adoptante(models.Model):
     nombre=models.CharField(max_length=20)
     direccion=models.TextField(max_length=45)
     email=models.TextField(max_length=30)
-    fecha=models.CharField(max_length=10)
+    edad=models.CharField(max_length=10)
     telefono=models.TextField(max_length=10)
-    #region=models.ForeignKey(Region,on_delete=models.CASCADE)
-    #ciudad=models.ForeignKey(Ciudad,on_delete=models.CASCADE)
-    #vivienda=models.ForeignKey(Vivienda,on_delete=models.CASCADE)
+    perro=models.ForeignKey(Perro,on_delete=models.CASCADE,default='DEFAULT VALUE')
+    vivienda=models.ForeignKey(Vivienda,on_delete=models.CASCADE,default='DEFAULT VALUE')
+
     def __str__(self):
         return self.rut 
 

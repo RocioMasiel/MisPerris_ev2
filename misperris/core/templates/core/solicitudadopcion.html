@@ -35,22 +35,25 @@
             <br>
             <br>
             <h2>SOLICITUD DE ADOPCIÓN</h2>
+                <input type="text" name="rut" id="rut" placeholder="Ingrese Rut"/>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
-                <select name="raza">
-                    <option>Seleccione</option>
-                    {% for ra in raza %}
-                    <option>{{ra.name}}</option>
-                    {% endfor %}
-                </select>
-
+                <input type="text" name="direccion" id="direccion" placeholder="Dirección"/>
+                <input type="number" name="edad" id="edad" placeholder="Edad"/>
+                <input type="number" name="telefono" id="telefono" placeholder="Teléfono"/>
+                <input type="text" name="razones" id="razones" placeholder="Razones"/>
                 <select name="estado">
                     <option>Seleccione</option>
-                    {% for est in est %}
+                    {% for est in estado %}
                     <option>{{est.name}}</option>
                     {% endfor %}
                 </select>
+                <select name="vivienda">
+                    <option>Seleccione</option>
+                    {% for v in vivienda %}
+                    <option>{{v.name}}</option>
+                    {% endfor %}
+                </select>
 
-                <input type="text" name="desc" id="desc" placeholder="Dé una descripción">
                 <input type="submit" value="Enviar" id="botoon"/>
                 <input type="reset" value="Limpiar" />
             </form> 
