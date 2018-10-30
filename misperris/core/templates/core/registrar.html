@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block contenedor %}
+{% load static %}
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -26,7 +27,7 @@
 
     <br>
     <br>
-    <div id="contenedor5">
+    <div id="contenedor5">{{MEDIA_URL}}
         <div id="caja1">
             <img src="{% static 'core/img/perro (1).png'%}" class="perro">
         </div>
@@ -47,7 +48,7 @@
 
                 <select name="estado">
                     <option>Seleccione</option>
-                    {% for est in est %}
+                    {% for est in estado %}
                     <option>{{est.name}}</option>
                     {% endfor %}
                 </select>
@@ -58,8 +59,14 @@
                 <input type="reset" value="Limpiar" />
 
             <br>
+            <br>
+            <br>
             <br>       
-            </form> 
+            </form>
+            <br>
+            <br>
+            <br>
+            <br> 
         </div>
     </div>
     {% if respuesta %}

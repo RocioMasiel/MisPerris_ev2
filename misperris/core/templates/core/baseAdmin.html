@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    
     <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
-
     {% block js %}
 
     {% endblock %}
@@ -37,26 +37,18 @@
           <span class="icon"> </span>Registrar</a>
           <a href="{% url 'eli' %}"><i class="fas fa-home"></i> 
           <span class="icon"> </span>Eliminar</a>
-          <a href="{% url 'adop' %}"><i class="fas fa-home"></i> 
-          <span class="icon"> </span>Solicitar Adopción</a> 
           <a href="{% url 'listar' %}"><i class="fas fa-home"></i> 
           <span class="icon"> </span>Listar</a>   
-          <a href="{% url 'gal' %}"><i class="fas fa-home"></i> 
-          <span class="icon"> </span>Galeria</a> 
           <a href="{% url 'logout' %}"><i class="fas fa-home"></i> 
             <span class="icon"> </span>Logout</a>     
       </nav>
   </div>
 </header>
-
-<body>
-
-    <div id="banner">
-        <center> 
-         <img src="{% static 'core/img/dog.png'%}" alt="">
-        </center>
+ <div id="banner">
+        <center>
+            <img src="{% static 'core/img/dog.png' %}">
+        </center>    
     </div>
-
     
     
     <div id="contenedor3">
@@ -77,7 +69,7 @@
         
     </div>
         
-    <script src="{% static 'js/slider.js' %}"></script>
+
     {% block contenedor %}
 
     {% endblock %}

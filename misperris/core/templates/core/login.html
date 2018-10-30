@@ -12,12 +12,17 @@
     <title>Document</title>
 </head>
 <body>
+    <br>
+    <br>
     <center>
     <form method="POST" class="formulario" >
         {% csrf_token %}
-        usuario :<input type="text" name="txtUsuario"/><br>
-        pass :<input type="text" name="txtPass"/><br>
-        <button type="submit">Ingresar</butt1on>        
+        <input type="text" name="txtUsuario" placeholder="Ingrese Usuario"/><br>
+        <input type="text" name="txtPass" placeholder="Ingrese contraseña"/><br>
+
+        <input type="submit" value="Enviar" id="botoon"/>
+        <input type="reset" value="Limpiar" />
+                
     </form>
     </center>
 </body>

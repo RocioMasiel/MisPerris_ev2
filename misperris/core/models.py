@@ -16,7 +16,7 @@ class Estado(models.Model):
 
 class Perro(models.Model):
     name=models.CharField(max_length=20,primary_key=True)
-    foto=models.ImageField(upload_to='core/img/',default='DEFAULT VALUE')
+    foto=models.ImageField(upload_to='media',verbose_name=u'Imágen')
     raza=models.ForeignKey(Raza,on_delete=models.CASCADE)
     estado=models.ForeignKey(Estado,on_delete=models.CASCADE,default='DEFAULT VALUE')
     descripcion=models.TextField()

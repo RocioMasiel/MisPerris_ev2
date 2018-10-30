@@ -19,12 +19,12 @@ def login(request):
         user=auth.authenticate(username=usu,password=pas)
         if user is not None and user.is_active:
             auth.login(request,user)
-            return render(request,'core/home.html',{'usuario':user.username})
+            return render(request,'core/baseAdmin.html',{'usuario':user.username})
         else:
             return render(request,'core/error.html')
 
     return render(request,'core/login.html')
-
+@login_required
 def registrar(request):
     ra=Raza.objects.all()
     est=Estado.objects.all()
@@ -47,6 +47,39 @@ def registrar(request):
         perro.save()
         resp=True
     return render(request,'core/registrar.html',{'raza':ra,'estado':est,'respuesta':resp})
-
+@login_required
+def eliminar(request):
+    perro=Perro.objects.all()
+    resp=False
+    if request.POST:
+        nom=request.POST.get("nombre","")
+        perr=Perro.objects.get(name=nom)
+        perr.delete()
+        resp=True
+    return render(request,'core/eliminar.html',{'Perro':perro,'respuesta':resp})
+@login_required
 def solicitudadopcion(request):
     return render(request,'core/solicitudadopcion.html')
+
+@login_required
+def listar(request):
+    perro=Perro.objects.all()
+    return render(request,'core/listar.html',{'Perro':perro})
+
+def error_acceso(request):
+    return render(request,'core/error_acceso.html')
+
+def buscar(request):
+    perro=Perro.objects.all()
+    est=Estado.objects.all()
+    if request.POST:
+        accion=request.POST.get("btnAccion","")
+        if accion == "Buscar":
+            nom=request.POST.get("nombre","")
+            pe=Perro.objects.get(name=nom)
+            mensaje="Encontro"
+            return render(request,'core/galeria.html',
+                {'estado':est,
+                'pe':pe,
+                'mensaje':mensaje})
+    return render(request,'core/galeria.html',{'Perro':perro,'Estado':est})

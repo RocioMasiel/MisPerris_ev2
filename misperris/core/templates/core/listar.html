@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% block contenedor %}
+
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+        <title>MisPerris</title>
+    </head>
+    <body>
+        
+        <br>
+        <br>
+        <br>
+        <center>
+        {{MEDIA_URL}}
+        <br>
+        <br>
+        <table >
+            <tr>
+                <td>Nombre</td>
+                <td>Raza</td>
+                <td>Estado</td>
+                <td>Descripcion</td>
+                <td></td>
+
+            </tr>
+            {% for p in Perro %}
+            <tr>
+                <td>{{p.name}}</td>
+                <td>{{p.raza}}</td>
+                <td>{{p.estado}}</td>
+                <td>{{p.descripcion}}</td>
+                <td ><img class="img" src='{% static 'media/'%}{{p.foto}}'></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        
+    </body>
+    </html>
+{% endblock %}
